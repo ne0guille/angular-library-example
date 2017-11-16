@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-5">
+        <label>{{ ctrl.books.length }} libros</label>
+    </div>
+    <div class="col-xs-5">
+        <label>Mi calificacion</label>
+    </div>
+    <div class="col-xs-2">
+        <label>Estados</label>
+    </div>
+</div>
+<hr>
+<div ng-repeat="book in ctrl.books">
+    <book-item book="book"></book-item>
+</div>

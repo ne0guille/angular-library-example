@@ -1,0 +1,5 @@
+<ul class="nav nav-pills">
+    <li ng-repeat="tab in ctrl.tabs" ng-class="{ active: tab.isActive }">
+      <a href="" ng-click="ctrl.select(tab)">{{ tab.title }}</a>
+    </li>
+</ul>
