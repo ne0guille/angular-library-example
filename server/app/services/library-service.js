@@ -10,7 +10,7 @@ const getBooks = async(user, query) => {
     
     var statusQuery = {};
     if(status !== 'all') statusQuery['books.status'] = { $eq: status};
-    console.log(lastSeen);
+
     LibraryModel.aggregate([
       { $match: { user: user }},
       { $unwind: "$books"},
@@ -23,15 +23,14 @@ const getBooks = async(user, query) => {
               $filter: {
                 input: '$books',
                 as: 'book',
-                cond: { $or: [{ $gt: ['$$book.book_id', lastSeen]}, { $eq: [lastSeen, '']}  ]}, //'5a0ce4cc1f6bb89e2c1cff43'
+                cond: { $or: [{ $gt: ['$$book.book_id', lastSeen]}, { $eq: [lastSeen, '']}  ]},
               },
-            }, 5]    
+            }, +limit]    
           },
          _id: 0,
           total: 1
       }},
      ], (err, results) =>{      
-        console.log(results);   
         LibraryModel.populate(results, {path: 'books.book'}, (err, res) =>{
           if(err) reject(err);
           resolve(res);
