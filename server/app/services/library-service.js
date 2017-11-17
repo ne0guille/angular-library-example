@@ -6,19 +6,37 @@ const mongoose = require('mongoose'),
 const getBooks = async(user, query) => {
 
   return new Promise((resolve, reject) => {
-    const { limit, status } = query;
+    const { limit, status, lastSeen } = query;
     
-    LibraryModel.findOne({ user: user })
-    .populate({
-      path: 'books.book',  
-      //match: { status: status },  
-      options: { limit: limit }
-    })       
-    .exec((err, library) => {
-      if (err) return reject(err);
-      library = library.books.filter(b => b.status === status || status === 'all');
-      resolve(library);
-    });
+    var statusQuery = {};
+    if(status !== 'all') statusQuery['books.status'] = { $eq: status};
+    console.log(lastSeen);
+    LibraryModel.aggregate([
+      { $match: { user: user }},
+      { $unwind: "$books"},
+      { $match: statusQuery},
+      { $sort: { 'books.book_id': 1}},      
+      { $group: { _id: "$_id", books: {"$push": "$books"}, total: { $sum: 1 }}},  
+      { $project: {
+          books: {
+            $slice: [{
+              $filter: {
+                input: '$books',
+                as: 'book',
+                cond: { $or: [{ $gt: ['$$book.book_id', lastSeen]}, { $eq: [lastSeen, '']}  ]}, //'5a0ce4cc1f6bb89e2c1cff43'
+              },
+            }, 5]    
+          },
+         _id: 0,
+          total: 1
+      }},
+     ], (err, results) =>{      
+        console.log(results);   
+        LibraryModel.populate(results, {path: 'books.book'}, (err, res) =>{
+          if(err) reject(err);
+          resolve(res);
+        });
+      });
   });
 }
 const updateStatus = async(userId, bookId, status) => {  

@@ -1,6 +1,4 @@
-import {
-  bookStatus
-} from '../../core/core.constants';
+import { bookStatus } from '../../core/core.constants';
 
 class LibraryBookItemCtrl {
 
@@ -9,7 +7,6 @@ class LibraryBookItemCtrl {
     this.$scope = $scope;
     this.bookDropdownOptions = Object.values(bookStatus);
   }
-
 
   updateStatus(status){
     const bookId = this.book._id;
@@ -23,10 +20,8 @@ let LibraryBookItem = {
   controllerAs: 'ctrl',
   templateUrl: 'library/book-item/book-item.component.html',
   bindings: {
-    book: '=',   
+    book: '<',   
    }
-  //link: function(scope, elem, attr) {}
-  //bindToController: true
 };
 
 export default LibraryBookItem;

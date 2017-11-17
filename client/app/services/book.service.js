@@ -6,17 +6,28 @@ export default class BookService {
   }
 
 
-  getLibrary(user = "eyherabideg", limit = 5, status = 'all') {
+  getLibrary(user, status = 'all', lastSeen = '', limit = 5) {
+    let url = `${this._AppConstants.library}/${user}/books?status=${status}&limit=${limit}`;
+    if(lastSeen.length) url += `&lastSeen=${lastSeen}`;
+
     let request = {
-      url: `${this._AppConstants.library}/${user}/books?limit=${limit}&status=${status}`,
+      url: url,
       method: 'GET',
       data: {
         id: user
       }
     };
+
     //todo refactor mongodse schema
     return this._$http(request).then((res) => {
-      return res.data.books.map(book => Object.assign({}, book.book, { status: book.status, rating: book.rating }));
+      let library = {};
+
+      if(res && res.data.length){
+        library = res.data[0];
+        library.books = library.books.map(book => Object.assign({}, book.book, { status: book.status, rating: book.rating }));        
+      }
+
+      return library;
     });
   }
 
@@ -42,7 +53,7 @@ export default class BookService {
         }
       };
 
-      return this._$http(request).then((res) => res.data.article);
+      return this._$http(request).then((res) => res);
     }
 
 

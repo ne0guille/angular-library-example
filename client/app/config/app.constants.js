@@ -1,5 +1,5 @@
 const AppConstants = {
-  appName: 'app',
+  appName: 'Angular Library sample app',
   library: 'http://localhost:3000/api/library'
 };
 

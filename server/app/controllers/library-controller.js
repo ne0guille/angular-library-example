@@ -13,7 +13,7 @@ router.route('/:id/books')
 
   const library = await libraryService.getBooks(userId, query);
   
-  return res.status(200).send({ books: library });
+  return res.status(200).send(library);
 });
 
 

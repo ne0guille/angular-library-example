@@ -1,15 +1,21 @@
 <div class="row">
     <div class="col-xs-5">
-        <label>{{ ctrl.books.length }} libros</label>
+        <label>{{ ctrl.total }} libros</label>
     </div>
-    <div class="col-xs-5">
-        <label>Mi calificacion</label>
+    <div class="col-xs-3">
+        <label>calificacion</label>
+    </div>
+    <div class="col-xs-2">
+       <label>Categoria</label>
     </div>
     <div class="col-xs-2">
         <label>Estados</label>
     </div>
 </div>
 <hr>
-<div ng-repeat="book in ctrl.books">
-    <book-item book="book"></book-item>
+<div infinite-scroll='ctrl.loadMore()'>
+    <book-item book="book" ng-repeat="book in ctrl.books"></book-item>
 </div>
+<center>
+    <p ng-if="!ctrl.books.length"> No se encontraron libros...</p>
+</center>

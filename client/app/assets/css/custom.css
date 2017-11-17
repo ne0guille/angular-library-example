@@ -15,7 +15,12 @@
   .star-rating.readonly .star.filled {
     color: #666; }
 
+.home.container {
+  margin-bottom: 70px; }
+
 .book {
   margin: 10px 0; }
+  .book__img {
+    padding-left: 0; }
   .book .book-info__title {
     display: inline-block; }

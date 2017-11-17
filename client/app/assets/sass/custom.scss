@@ -23,9 +23,16 @@
     color: #666;
   }
 }
+.home.container {
+  margin-bottom: 70px;
+}
 
 .book {
   margin: 10px 0; 
+  
+  &__img {
+    padding-left: 0;
+  }
 
   .book-info {
     &__title {

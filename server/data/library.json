@@ -1,1 +1,15 @@
-{'user': 'eyherabideg','books': [{'book':ObjectId("5a0c8f9e1f6bb89e2c1ce770"), 'status': 'Leyendo', 'rating': 4}]}
+{'user': 'eyherabideg','books': [
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff43"), 'book_id': '5a0ce4cc1f6bb89e2c1cff43',  'status': 'Leyendo', 'rating': 4},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff44"), 'book_id': '5a0ce4cc1f6bb89e2c1cff44', 'status': 'Leyendo', 'rating': 4},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff45"), 'book_id': '5a0ce4cc1f6bb89e2c1cff45', 'status': 'Quiero Leer', 'rating': 0},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff46"), 'book_id': '5a0ce4cc1f6bb89e2c1cff46','status': 'Leyendo', 'rating': 4},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff47"), 'book_id': '5a0ce4cc1f6bb89e2c1cff47','status': 'Leyendo', 'rating': 5},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff48"), 'book_id': '5a0ce4cc1f6bb89e2c1cff48','status': 'Leyendo', 'rating': 2},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff49"), 'book_id': '5a0ce4cc1f6bb89e2c1cff49','status': 'Leyendo', 'rating': 4},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff50"), 'book_id': '5a0ce4cc1f6bb89e2c1cff50','status': 'Quiero Leer', 'rating': 0},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff51"), 'book_id': '5a0ce4cc1f6bb89e2c1cff51','status': 'Quiero Leer', 'rating': 0},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff52"), 'book_id': '5a0ce4cc1f6bb89e2c1cff52','status': 'Leyendo', 'rating': 0},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff53"), 'book_id': '5a0ce4cc1f6bb89e2c1cff53','status': 'Quiero Leer', 'rating': 0},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff54"), 'book_id': '5a0ce4cc1f6bb89e2c1cff54','status': 'Leido', 'rating': 4},
+{'book':ObjectId("5a0ce4cc1f6bb89e2c1cff55"), 'book_id': '5a0ce4cc1f6bb89e2c1cff55', 'status': 'Leyendo', 'rating': 2}
+]}

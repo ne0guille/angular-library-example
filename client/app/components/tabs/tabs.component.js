@@ -3,6 +3,7 @@ class AppTabsCtrl {
   constructor() {    
       this.tabs = [];
   }
+  
   $onInit(){
     if(this.tabs.length) this.tabs[0].isActive = true;      
   }
@@ -13,21 +14,19 @@ class AppTabsCtrl {
     });
 
     selectedTab.isActive = true;
+    this.onSelect({ param: selectedTab.value });
   }
 
 }
 
-
-let AppTabs = {
+const AppTabs = {
   controller: AppTabsCtrl,
   controllerAs: 'ctrl',
   templateUrl: 'components/tabs/tabs.component.html',
   bindings: {
-    tabs: '=',        
+    tabs: '=',
     onSelect: '&',
-},
-  //link: function(scope, elem, attr) {}
-  //bindToController: true
+  },
 };
 
 export default AppTabs;

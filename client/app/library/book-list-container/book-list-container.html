@@ -1,9 +1,12 @@
-<section>
-    <h1>My Library</h1>
-    <div class="pull-right">
-        <tabs tabs="ctrl.tabs"></tabs>
+<section class="">
+    <h1 style="display:inline-block">My Library</h1>
+
+    <div class="container">
+        <tabs class="pull-right" tabs="ctrl.tabs" on-select="ctrl.getBooks(param)"></tabs>    
     </div>
-    <div>
-        <book-list books="ctrl.books"></book-list>
+    <br>
+    <div class="container">
+        <book-list books="ctrl.books" total="ctrl.totalLibrary"></book-list>
     </div>
+
 </section>
