@@ -9,7 +9,7 @@ var config = {
       name: 'server'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/alibrate-dev'
+    db: 'mongodb://localhost/library-dev'
   },
 
   test: {
@@ -18,7 +18,7 @@ var config = {
       name: 'server'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/server-test'
+    db: 'mongodb://localhost/library-test'
   },
 
   production: {
@@ -27,7 +27,7 @@ var config = {
       name: 'server'
     },
     port: process.env.PORT || 3000,
-    db: 'mongodb://localhost/server-production'
+    db: 'mongodb://localhost/library-production'
   }
 };
 
