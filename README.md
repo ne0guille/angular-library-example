@@ -1,5 +1,5 @@
 # angular-library-example
-Library sample application build wit AngularJs 1.6 , Nodejs and mongodb
+Library sample application build with AngularJs 1.6 , Nodejs and mongodb
 
 Running the app.
 
@@ -10,7 +10,7 @@ Install dependencies
 `npm install`
 
 Running the client: 
-`gulp`
+`npm start`
 
 **Server**
 
